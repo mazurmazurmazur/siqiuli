@@ -1,104 +1,96 @@
-html, body{
-    padding: 0;
-    margin: 0;
+html,
+body {
+  padding: 0;
+  margin: 0;
   /*   overflow-y: hidden;
     overflow-x: hidden; */
-  }
-  
-  #listMenu{
-    list-style-type: none;
-    position: absolute;
-    transition: 0.5s ease-in-out;
-    top: 50vh;
-  }
-  span{
-    font-size: 10px !important;
-    color: grey;
-  }
-  
-  #a1{
-    font-size: 30px;
-  }
-  
-  .aa{
-    position: relative;
-    cursor: pointer;
-    transition: 1s;
-    margin-bottom: 10vh;
-    
-  }
-  
-  span:hover{
-    text-decoration: underline;
-  }
-  
-  
-  .mainPainting{
-    position: absolute;
-    top: 30vh;
-    width: 60vw;
-    height: 60vh;
-    overflow: hidden;
-    padding-bottom: 5vh;
-
-    
-
-  }
-  .mainPainting img{
-    width: inherit;
-    height: auto;
-    transition: 0.5s;
-    padding-bottom: 5vh;
-  }
-.dets{
-  margin:0;
-  padding:0;
-  position: absolute;
-  bottom:0;
-  font-size: 2em;
-  right:0;
-  cursor: pointer;
-transition: 0.5s;
-
 }
 
-.dets:hover{
+#listMenu {
+  list-style-type: none;
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  top: 50vh;
+}
+span {
+  font-size: 10px !important;
+  color: grey;
+}
+
+#a1 {
+  font-size: 30px;
+}
+
+.aa {
+  position: relative;
+  cursor: pointer;
+  transition: 1s;
+  margin-bottom: 10vh;
+  width: 20vw;
+}
+
+span:hover {
+  text-decoration: underline;
+}
+
+.mainPainting {
+  position: absolute;
+  top: 30vh;
+  width: 60vw;
+  height: 60vh;
+  overflow: hidden;
+  padding-bottom: 5vh;
+}
+.mainPainting img {
+  width: inherit;
+  height: auto;
+  transition: 0.5s;
+  padding-bottom: 5vh;
+}
+.dets {
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  font-size: 2em;
+  right: 0;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.dets:hover {
   color: gainsboro;
 }
 
-
-  @media screen and (min-width: 761px) {
-    .mainPainting{
-   
-      left: 25vw;
-    }
-
-    .mainPainting img{
-      height: 60vh;
-    }
-  
+@media screen and (min-width: 761px) {
+  .mainPainting {
+    left: 25vw;
   }
 
-  @media screen and (max-width: 760px) {
+  .mainPainting img {
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 760px) {
   .mainPainting {
     top: 25vh;
     width: 60vw;
     height: 65vh;
     overflow: hidden;
-    right:0;
+    right: 0;
     padding-bottom: 0;
-}
-
-.mainPainting img{
-  opacity: 1;
-  height: 60vh;
-  width: auto;
-  right: 0px;
-  margin-right: 0px;
-}
-
-#listMenu{
-  padding-left: 5vw;
-}
-
   }
+
+  .mainPainting img {
+    opacity: 1;
+    height: 60vh;
+    width: auto;
+    right: 0px;
+    margin-right: 0px;
+  }
+
+  #listMenu {
+    padding-left: 5vw;
+  }
+}

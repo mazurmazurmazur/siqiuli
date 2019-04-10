@@ -31,7 +31,9 @@ h2 {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 12vw;
+  width: 16vw;
+  margin-top: 3vh;
+  transition: 1.8s; /* Transition effect when sliding down (and up) */
 }
 
 .activeButton {
@@ -48,7 +50,8 @@ h2 {
   left: 0;
   background-color: white;
   z-index: 20;
-  transition: top 0.8s; /* Transition effect when sliding down (and up) */
+  transition: top 1.8s; /* Transition effect when sliding down (and up) */
+  overflow-y: visible;
 }
 
 #myVideo {

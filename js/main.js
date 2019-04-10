@@ -1,3 +1,5 @@
+var isMobile = window.matchMedia('only screen and (max-width: 760px)').matches;
+
 // BURGER MENU BELOW, COMPILED FROM BABEL
 
 var app = (function() {
@@ -41,13 +43,23 @@ var app = (function() {
 
 //END BURGER MENU
 
-// // var prevScrollpos = window.pageYOffset;
-// window.onscroll = function() {
-//   var currentScrollPos = window.pageYOffset;
-//   if (prevScrollpos > currentScrollPos) {
-//     document.getElementById('header').style.top = '0';
-//   } else {
-//     document.getElementById('header').style.top = '-20vh';
-//   }
-//   prevScrollpos = currentScrollPos;
-// };
+// hide menu on scroll below
+
+if (!isMobile) {
+  var prevScrollpos = window.pageYOffset;
+  window.addEventListener('scroll', onScrollMenuHides);
+  let logoImg = document.querySelector('#logo img');
+
+  function onScrollMenuHides() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById('header').style.top = '0';
+      logoImg.style.transform = 'translate(0, 0)';
+    } else {
+      logoImg.style.transform = 'translate(-40vw, 25vh)';
+
+      document.getElementById('header').style.top = '-25vh';
+    }
+    prevScrollpos = currentScrollPos;
+  }
+}
