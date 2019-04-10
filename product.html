@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SiQiuli</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="stylesheet" href="css/product.css" />
+  </head>
+
+  <body>
+    <div id="header">
+      <a href="index.html" id="logo"><img src="images/logo.png"/></a>
+
+      <div class="menu-icon">
+        <span class="menu-icon__line menu-icon__line-left"></span>
+        <span class="menu-icon__line"></span>
+        <span class="menu-icon__line menu-icon__line-right"></span>
+      </div>
+
+      <nav class="nav_">
+        <div class="nav__content">
+          <ul class="nav__list">
+            <li>
+              <a id="aboutButton" class="nav__list-item" href="about.html"
+                >ABOUT</a
+              >
+            </li>
+            <li>
+              <a id="museumButton" class="nav__list-item" href="museum.html"
+                >MUSEUM</a
+              >
+            </li>
+            <li>
+              <a
+                id="artButton"
+                class="nav__list-item activeButton "
+                href="art.html"
+                >ART</a
+              >
+            </li>
+            <li>
+              <a
+                id="exhibitionsButton"
+                class="nav__list-item"
+                href="exhibitions.html"
+                >EXHIBITIONS</a
+              >
+            </li>
+            <li>
+              <a
+                id="worldPeaceButton"
+                class="nav__list-item"
+                href="worldpeace.html"
+                >WORLD PEACE</a
+              >
+            </li>
+            <li>
+              <a id="mediaButton" class="nav__list-item" href="media.html"
+                >MEDIA</a
+              >
+            </li>
+            <li>
+              <a id="contactButton" class="nav__list-item" href="contact.html"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="parent">
+      <p class="title"></p>
+      <p id="size">Size: <span id="sizeSpan"></span></p>
+      <p id="description"></p>
+      <div id="leftImg"></div>
+      <div id="rightImg"></div>
+    </div>
+
+    <section id="wrapper"></section>
+    <template id="paintingTemplate">
+      <article id="painting"></article>
+    </template>
+    <script src="js/product.js"></script>
+  </body>
+</html>
