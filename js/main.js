@@ -63,3 +63,20 @@ if (!isMobile) {
     prevScrollpos = currentScrollPos;
   }
 }
+
+//end hide menu on scroll
+
+//changing lang below
+
+flag = $('.flag');
+englishFlag = document.getElementById('englishFlag');
+chineseFlag = document.getElementById('chineseFlag');
+
+flag.click(function() {
+  flag.removeClass('active');
+  $(this).addClass('active');
+});
+
+chineseFlag.addEventListener('click', function() {
+  window.location.replace('http://siqiulicontemporaryceramicart.com');
+});

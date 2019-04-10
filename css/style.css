@@ -54,6 +54,27 @@ h2 {
   overflow-y: visible;
 }
 
+.languages {
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
+}
+
+.flag {
+  width: 2.5vw;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+
+#chineseFlag,
+englishFlag {
+  cursor: pointer;
+}
+
+.active {
+  border: 2px grey solid;
+}
+
 #myVideo {
   position: fixed;
   right: 0;
