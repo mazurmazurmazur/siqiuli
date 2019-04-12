@@ -41,11 +41,10 @@ span:hover {
   overflow: hidden;
   padding-bottom: 5vh;
 }
-.mainPainting img {
+.mainPainting div img {
   width: inherit;
   height: auto;
   transition: 0.5s;
-  padding-bottom: 5vh;
 }
 .dets {
   margin: 0;
@@ -65,10 +64,84 @@ span:hover {
 @media screen and (min-width: 761px) {
   .mainPainting {
     left: 25vw;
+    position: relative;
   }
 
-  .mainPainting img {
+  .mainPainting div img {
     height: 60vh;
+    width: auto;
+    display: block;
+    margin: auto;
+  }
+
+  .exhMainImg:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  *,
+  *:before,
+  *:after {
+    transition: 0.5s;
+    margin: 0;
+  }
+
+  .elem {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2em;
+    overflow: hidden;
+    will-change: transform;
+  }
+
+  .elem:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    will-change: transform, opacity;
+  }
+
+  .elem:after {
+    content: '';
+    position: absolute;
+    will-change: transform;
+  }
+
+  .elem img {
+    will-change: transform;
+  }
+
+  .elem:hover:before {
+    opacity: 1;
+  }
+  .exhMainImg:before {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: luminosity;
+  }
+
+  .exhMainImg:after {
+    opacity: 0;
+    border: 0.15vw solid #fff;
+    transform: scale(0.5);
+  }
+
+  .exhMainImg:hover:after {
+    opacity: 1;
+    transform: scale(0.95);
   }
 }
 
@@ -82,12 +155,24 @@ span:hover {
     padding-bottom: 0;
   }
 
-  .mainPainting img {
+  .aa {
+    width: 33vw;
+  }
+
+  .mainPainting div img {
     opacity: 1;
     height: 60vh;
     width: auto;
-    right: 0px;
-    margin-right: 0px;
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+  }
+
+  .mainPainting {
+    cursor: pointer !important;
   }
 
   #listMenu {

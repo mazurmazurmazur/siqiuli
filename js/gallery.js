@@ -46,7 +46,7 @@ function showItems(data) {
 
     if (category == 'ceramic' && dynamicContent == 'ceramic')
       list.appendChild(clone);
-    else if (category != 'ceramic' && dynamicContent == 'various')
+    else if (category != 'ceramic' && dynamicContent == 'rice')
       list.appendChild(clone);
   });
 }
