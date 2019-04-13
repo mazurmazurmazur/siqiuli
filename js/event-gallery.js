@@ -64,3 +64,25 @@ function showPaintings(data) {
 }
 
 getAllPaintings();
+
+$(document).ready(function() {
+  //Get the modal
+  var modal = document.getElementById('imgModal');
+
+  //Get the image
+  var img = $('.gallery-image');
+  var modalImg = document.getElementById('img01');
+
+  img.on('click', function() {
+    modal.style.display = 'block';
+    modalImg.src = this.src;
+    modalImg.alt = this.alt;
+  });
+
+  var span = document.getElementsByClassName('close')[0];
+
+  //click on (x), close the modal
+  span.onclick = function() {
+    modal.style.display = 'none';
+  };
+});
