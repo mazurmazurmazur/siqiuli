@@ -73,10 +73,11 @@ $(document).ready(function() {
   var img = $('.gallery-image');
   var modalImg = document.getElementById('img01');
 
-  img.on('click', function() {
+  $(document).on('click', '.gallery-image', function() {
     modal.style.display = 'block';
     modalImg.src = this.src;
     modalImg.alt = this.alt;
+    console.log('hello');
   });
 
   var span = document.getElementsByClassName('close')[0];

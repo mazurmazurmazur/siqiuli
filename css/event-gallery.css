@@ -77,10 +77,15 @@ Remove or comment-out the code block below to see how the browser will fall-back
 }
 /* Modal Content (image) */
 .modal-content {
+  position: absolute;
   margin: auto;
   display: block;
-  wodth: 80%;
-  max-width: 700px;
+  max-width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100%;
 }
 /*Caption of Modal Image*/
 
@@ -114,8 +119,9 @@ Remove or comment-out the code block below to see how the browser will fall-back
   right: 35px;
   color: #f1f1f1;
   font-size: 40px;
-  font-weight: bold;
+  font-weight: 300;
   transition: 0.3s;
+  z-index: 10;
 }
 .close:hover,
 .close:focus {
@@ -126,6 +132,7 @@ Remove or comment-out the code block below to see how the browser will fall-back
 /* 100% Image Width on Smaller Screens*/
 @media only screen and (max-width: 700px) {
   .modal-content {
-    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
   }
 }
