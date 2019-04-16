@@ -59,21 +59,25 @@ h2 {
   top: 1vh;
   right: 1vw;
 }
+.languages p {
+  display: inline;
+}
 
 .flag {
   width: 2.5vw;
-  margin-left: 1vw;
+  margin-left: 0;
   cursor: pointer;
+  font-size: 0.5em;
 }
 
 #chineseFlag,
-englishFlag {
+#englishFlag {
   cursor: pointer;
 }
 
-.active {
+/* .active {
   border: 2px grey solid;
-}
+} */
 
 #myVideo {
   position: fixed;
@@ -148,14 +152,15 @@ englishFlag {
 
   #logo img {
     margin-top: 5vh;
-    width: 40vw;
+    width: 50vw;
+    margin-bottom: 1vh;
   }
 
   .menu-icon {
     height: 40px;
     width: 40px;
     position: fixed;
-    z-index: 2;
+    z-index: 20;
     right: 10vw;
     top: 7vh;
     text-decoration: none;
@@ -324,6 +329,18 @@ englishFlag {
 
   body.nav-active .nav__list-item:nth-child(5) {
     transition-delay: 1s;
+  }
+
+  .flag {
+    width: 10.5vw;
+    margin-left: 1vw;
+    cursor: pointer;
+    font-size: 0.6em;
+  }
+
+  #chineseFlag,
+  #englishFlag {
+    cursor: pointer;
   }
 }
 

@@ -15,7 +15,7 @@
 <meta name="theme-color" content="#ffffff">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/event-gallery.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/libs/jquery.js"></script>
 
 
 
@@ -35,7 +35,14 @@
           	<div class="nav__content">
 
                 <ul class ="nav__list">
-                  <li><a id="aboutButton"class="nav__list-item" href="about.html">ABOUT</a></li>
+                    <li>
+                        <div class="languages nav__list-item">
+                            <p id="englishFlag" class="flag">ENGLISH</p>
+                            <p class="flag">/</p>
+                            <p id="chineseFlag" class="flag">中文</p>
+                        </div>
+                      </li>
+                  <li><a id="aboutButton"class="nav__list-item"  href="about.html?id=siqiuli">ABOUT</a></li>
                   <li><a id="museumButton"class="nav__list-item" href="museum.html">MUSEUM</a></li>
                   <li><a id="artButton" class="nav__list-item " href="art.html">ART</a></li>
                   <li><a id="exhibitionsButton"class="nav__list-item activeButton" href="exhibitions.html">EXHIBITIONS</a></li>
@@ -45,10 +52,7 @@
                 </ul>
                 </div>
               </nav>
-              <div class="languages">
-                <img id="englishFlag" class="active flag" src="images/englishf.png" />
-                <img id="chineseFlag" class="flag" src="images/chinesef.png" />
-              </div>
+          
             </div>
 
 

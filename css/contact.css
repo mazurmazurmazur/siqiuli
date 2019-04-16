@@ -1,5 +1,6 @@
 .containerContact {
-  margin-top: 20vh;
+  margin-top: 30vh;
+  margin-bottom: 20vh;
 }
 
 .formCore {
@@ -42,7 +43,7 @@ textarea {
   border: 1px solid #2f323a;
   border-radius: 3px;
   color: #2f323a;
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 16px;
   line-height: inherit;
   margin: 30px 0;
@@ -57,3 +58,14 @@ textarea {
   color: #5e9bfc;
 }
 
+footer {
+  margin-top: 20vh;
+}
+
+/* MOBILE BELOW */
+
+@media screen and (max-width: 760px) {
+  .containerContact {
+    margin-top: 20vh;
+  }
+}

@@ -61,7 +61,8 @@
 }
 
 #backToTop {
-  font-size: 30px;
+  margin-bottom: 40vh;
+  font-size: 50px;
   text-decoration: none;
   color: #797e82;
   display: block;
@@ -79,6 +80,7 @@
   .content-gal img {
     width: 80vw;
     margin-left: 10vw;
+    height: auto;
   }
 }
 

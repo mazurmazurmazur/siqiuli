@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>About SiQiuli</title>
+    <title>About Si Qiuli</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="apple-touch-icon"
@@ -42,7 +42,7 @@
       media="screen"
       href="css/about.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/libs/jquery.js"></script>
   </head>
   <body>
     <div id="header">
@@ -58,10 +58,24 @@
         <div class="nav__content">
           <ul class="nav__list">
             <li>
+              <div class="languages nav__list-item">
+                <!-- <img
+                  id="englishFlag"
+                  class="active flag"
+                  src="images/englishf.png"
+                /> -->
+                <p id="englishFlag" class="flag">ENGLISH</p>
+                <p class="flag">/</p>
+                <p id="chineseFlag" class="flag">中文</p>
+
+                <!-- <img id="chineseFlag" class="flag" src="images/chinesef.png" /> -->
+              </div>
+            </li>
+            <li>
               <a
                 id="aboutButton"
                 class="nav__list-item activeButton"
-                href="about.html"
+                href="about.html?id=siqiuli"
                 >ABOUT</a
               >
             </li>
@@ -102,13 +116,17 @@
           </ul>
         </div>
       </nav>
-      <div class="languages">
-        <img id="englishFlag" class="active flag" src="images/englishf.png" />
-        <img id="chineseFlag" class="flag" src="images/chinesef.png" />
-      </div>
     </div>
 
     <div class="middleNoFooter">
+      <h1>ABOUT</h1>
+      <div id="aboutNav">
+        <ul>
+          <li id="aboutSi"><a href="about.html?id=siqiuli">Si Qiuli</a></li>
+          <li id="aboutMu"><a href="about.html?id=museum">Museum</a></li>
+          <li id="aboutCe"><a href="about.html?id=ceramic">Ceramic Art</a></li>
+        </ul>
+      </div>
       <div id="textAbout"></div>
 
       <div id="imagesAboutWrapper">
@@ -119,9 +137,8 @@
           <img id="aboutImageMobile" src="" />
         </div>
       </div>
+      <div id="aboutGallery"></div>
     </div>
-
-    <div id="deleteme"></div>
 
     <script src="js/main.js"></script>
     <script src="js/about.js"></script>

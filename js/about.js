@@ -1,11 +1,43 @@
-function fetchAbout() {
-  fetch('http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/204') //only one entry in json file (WP REST)
+// Parse the URL parameter
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+    results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+// Give the parameter a variable name
+var dynamicContent = getParameterByName('id');
+//getParameterByName is a function that fetches the id from URL
+//the id in URL comes from dynamically set "href" in blog.html through blog.js
+//the id set in this URL comes from fetched json file in blog.js
+
+let link;
+console.log(dynamicContent);
+if (dynamicContent == 'siqiuli') {
+  link = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/204';
+} else if (dynamicContent == 'museum') {
+  link = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/261';
+} else if (dynamicContent == 'ceramic') {
+  link = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/260';
+}
+
+let images = [];
+let list = document.querySelector('#aboutGallery');
+
+function fetchAbout(link_) {
+  console.log(link_);
+  fetch(link_) //only one entry in json file (WP REST)
     .then(res => res.json())
     .then(showAbout);
 }
+
 function showAbout(json) {
   console.log(json); //shows json file in console, makes development much easier
   let acf = json.acf;
+  console.dir(acf);
 
   let imageDesktop = document.getElementById('aboutImageDesktop'); //selecting DOM elements
   let imageMobile = document.getElementById('aboutImageMobile');
@@ -13,10 +45,43 @@ function showAbout(json) {
 
   let jsonText = acf.about_text;
   let image = acf.about_images.image1.sizes.medium_large;
+  images = acf.about_images;
 
   imageDesktop.setAttribute('src', image);
-  imageMobile.setAttribute('src', image);
+  // imageMobile.setAttribute('src', image);
+
+  console.log('json bfore ' + jsonText);
+  console.log('image ' + image);
+  jsonText = jsonText.replace(
+    '<p>',
+    '<p><img id="aboutImageMobile" class="noDesktop" src="' + image + '">'
+  ); ///adding image to text, in order for it to float in it
+  console.log(jsonText);
+
   aboutText.innerHTML = jsonText;
+
+  pushImages(images);
 }
 
-fetchAbout();
+function pushImages(arrTemp) {
+  for (key in arrTemp) {
+    ///looping through all keys in this product(acf= advanced custom fields)
+    if (key && key != 'image1') {
+      let photo = arrTemp[key].sizes.medium_large;
+      console.dir(photo);
+      if (photo) {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('gallery-item');
+        let newImage = document.createElement('img');
+        newImage.classList.add('gallery-image');
+
+        newImage.setAttribute('src', photo);
+
+        newDiv.appendChild(newImage);
+        list.appendChild(newDiv);
+      }
+    }
+  }
+}
+
+fetchAbout(link);

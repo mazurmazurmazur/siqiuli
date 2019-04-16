@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="stylesheet" href="css/product.css" />
+    <script src="js/libs/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
   </head>
 
   <body>
@@ -23,7 +25,17 @@
         <div class="nav__content">
           <ul class="nav__list">
             <li>
-              <a id="aboutButton" class="nav__list-item" href="about.html"
+              <div class="languages nav__list-item">
+                <p id="englishFlag" class="flag">ENGLISH</p>
+                <p class="flag">/</p>
+                <p id="chineseFlag" class="flag">中文</p>
+              </div>
+            </li>
+            <li>
+              <a
+                id="aboutButton"
+                class="nav__list-item"
+                href="about.html?id=siqiuli"
                 >ABOUT</a
               >
             </li>
@@ -69,24 +81,25 @@
           </ul>
         </div>
       </nav>
-      <div class="languages">
-        <img id="englishFlag" class="active flag" src="images/englishf.png" />
-        <img id="chineseFlag" class="flag" src="images/chinesef.png" />
-      </div>
     </div>
 
-    <div class="parent">
+    <div class="parentAll">
+      <div id="titleImageWrapper"></div>
       <p class="title"></p>
       <p id="size">Size: <span id="sizeSpan"></span></p>
       <p id="description"></p>
-      <div id="leftImg"></div>
-      <div id="rightImg"></div>
+      <div class="parent">
+        <div id="leftImg"></div>
+        <div id="rightImg"></div>
+      </div>
     </div>
 
     <section id="wrapper"></section>
     <template id="paintingTemplate">
       <article id="painting"></article>
     </template>
+    <script src="js/main.js"></script>
+
     <script src="js/product.js"></script>
   </body>
 </html>
