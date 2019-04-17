@@ -156,6 +156,9 @@ body {
 #sizeSpan {
   font-weight: 500;
 }
+video {
+  object-fit: fill;
+}
 
 /* ----------- Mobile Screens -----------*/
 
@@ -172,9 +175,12 @@ body {
     margin-top: 10vh;
   }
   #leftImg img,
-  #rightImg img {
+  #rightImg img,
+  #leftImg video,
+  #rightImg video {
     width: 100%;
     margin-top: 10%;
+    height: auto;
   }
 
   #arrow {
@@ -222,7 +228,9 @@ body {
   }
 
   #leftImg img,
-  #rightImg img {
+  #rightImg img,
+  #leftImg video,
+  #rightImg video {
     width: 100%;
     display: block;
     margin-top: 10%;
