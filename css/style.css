@@ -10,7 +10,7 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 a {
@@ -28,12 +28,15 @@ h2 {
 }
 
 #logo img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 16vw;
+  width: 100%;
   margin-top: 3vh;
   transition: 1.8s; /* Transition effect when sliding down (and up) */
+}
+
+#logo {
+  display: block;
+  margin: auto;
+  width: 16vw;
 }
 
 .activeButton {
@@ -56,8 +59,6 @@ h2 {
 
 .languages {
   position: absolute;
-  top: 1vh;
-  right: 1vw;
 }
 .languages p {
   display: inline;
@@ -68,6 +69,9 @@ h2 {
   margin-left: 0;
   cursor: pointer;
   font-size: 0.5em;
+}
+.flag:hover {
+  color: lightgray;
 }
 
 #chineseFlag,
@@ -104,29 +108,21 @@ h2 {
     display: none;
   }
 
-  .underline80 {
-    position: absolute;
-    padding-top: 2vh;
-    left: 0;
-    width: 100vw;
-    border-bottom: solid 1px rgb(219, 219, 219);
-    background-color: white;
-  }
-
   .nav_ {
-    text-align: center;
+    text-align: left;
     padding-top: 2vh;
     white-space: nowrap;
     font-size: 2.3em;
     display: block !important;
+    margin: auto;
   }
 
   .nav_ ul li {
     display: inline-block;
     text-align: center;
-    margin-left: 1vw;
-    margin-right: 3.9vw;
+    margin: auto;
     white-space: nowrap;
+    width: calc(100vw / 7);
   }
 
   .nav_ ul li a {
@@ -137,9 +133,19 @@ h2 {
     text-decoration: none;
   }
 
+  #langLi {
+    position: absolute;
+    top: 1vh;
+    right: -5vw;
+  }
+
   .nav_ ul li a:hover {
     color: gainsboro;
     text-decoration: none;
+  }
+  .nav__list {
+    padding: 0 !important;
+    margin-left: -2vw;
   }
 }
 
@@ -150,10 +156,13 @@ h2 {
     display: none;
   }
 
-  #logo img {
-    margin-top: 5vh;
+  #logo {
     width: 50vw;
     margin-bottom: 1vh;
+  }
+
+  #logo img {
+    margin-top: 5vh;
   }
 
   .menu-icon {
@@ -228,7 +237,7 @@ h2 {
     cursor: pointer;
   }
 
-  .nav__list {
+  ul .nav__list {
     padding: 0;
   }
 
@@ -345,3 +354,16 @@ h2 {
 }
 
 /* END OF MOBILE */
+
+/*TABLET*/
+
+@media (min-width: 768px) and (max-width: 1240px) {
+  .nav_ {
+    font-size: 1.5vw;
+  }
+  #langLi {
+    right: -3vw;
+  }
+}
+
+/*END TABLET*/

@@ -84,13 +84,6 @@ span:hover {
     cursor: pointer;
   }
 
-  *,
-  *:before,
-  *:after {
-    transition: 0.5s;
-    margin: 0;
-  }
-
   .elem {
     position: absolute;
     left: 50%;

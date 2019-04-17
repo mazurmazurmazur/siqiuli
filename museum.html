@@ -36,6 +36,7 @@
       media="screen"
       href="css/style.css"
     />
+    <script src="js/libs/jquery.js"></script>
   </head>
   <body>
     <div id="header">
@@ -50,7 +51,7 @@
       <nav class="nav_">
         <div class="nav__content">
           <ul class="nav__list">
-            <li>
+            <li id="langLi">
               <div class="languages nav__list-item">
                 <p id="englishFlag" class="flag">ENGLISH</p>
                 <p class="flag">/</p>
@@ -74,15 +75,15 @@
               >
             </li>
             <li>
-              <a id="artButton" class="nav__list-item" href="art.html">ART</a>
-            </li>
-            <li>
               <a
                 id="exhibitionsButton"
                 class="nav__list-item"
                 href="exhibitions.html"
                 >EXHIBITIONS</a
               >
+            </li>
+            <li>
+              <a id="artButton" class="nav__list-item" href="art.html">ART</a>
             </li>
             <li>
               <a

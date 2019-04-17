@@ -55,8 +55,10 @@ if (!isMobile) {
     if (prevScrollpos > currentScrollPos) {
       document.getElementById('header').style.top = '0';
       logoImg.style.transform = 'translate(0, 0)';
+      logoImg.style.backgroundColor = 'rgba(255, 255, 255, 0.0)';
     } else {
-      logoImg.style.transform = 'translate(-40vw, 25vh)';
+      logoImg.style.transform = 'translate(-39vw, 25vh)';
+      logoImg.style.backgroundColor = 'rgba(255, 255, 255, 0.44)';
 
       document.getElementById('header').style.top = '-25vh';
     }
