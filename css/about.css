@@ -75,7 +75,7 @@ h1 {
   h1 {
     text-align: center;
     display: block;
-    margin-top: 20vh;
+    margin-top: 26vh;
   }
 
   #imagesAboutWrapper {
@@ -102,6 +102,31 @@ h1 {
     font-size: 3.5vw;
     z-index: 1;
     margin-top: 0;
+  }
+
+  #aboutNav {
+    width: 100vw;
+    position: fixed;
+    top: 18vh;
+    display: block;
+    margin: auto;
+    background: white;
+    z-index: 3;
+    padding-bottom: 1vh;
+  }
+
+  #aboutNav ul {
+    font-size: 3vw;
+    display: block;
+    margin: auto;
+    white-space: nowrap;
+  }
+
+  #aboutNav ul li {
+    display: inline-block;
+    font-size: 3vw;
+    width: calc(100% / 3);
+    white-space: nowrap;
   }
 }
 

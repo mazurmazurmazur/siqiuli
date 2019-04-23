@@ -1,6 +1,10 @@
 * {
   box-sizing: border-box;
 }
+body,
+html {
+  overflow-x: hidden;
+}
 
 footer {
   margin-top: 10vh;
@@ -147,7 +151,24 @@ footer {
   font-style: normal;
 }
 
+.contactLi p {
+  color: white;
+  font-size: 1vw;
+  max-width: 80vw;
+  display: block;
+  margin: auto;
+}
+
+.contactLi img {
+  max-height: 20vh;
+  width: auto;
+}
+
 @media only screen and (max-width: 768px) {
+  .contactLi p {
+    font-size: 4vw;
+  }
+
   .footer-list-header {
     font-size: 2em;
   }
@@ -220,6 +241,9 @@ footer {
     text-align: center;
     width: 100%;
     margin-top: 10px;
+  }
+  .contactLi p {
+    font-size: 5vw;
   }
 }
 @media only screen and (max-width: 480px) {

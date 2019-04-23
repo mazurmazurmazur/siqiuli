@@ -15,7 +15,6 @@ var dynamicContent = getParameterByName('id');
 //the id set in this URL comes from fetched json file in blog.js
 
 let link;
-console.log(dynamicContent);
 if (dynamicContent == 'siqiuli') {
   link = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/204';
 } else if (dynamicContent == 'museum') {
@@ -28,16 +27,15 @@ let images = [];
 let list = document.querySelector('#aboutGallery');
 
 function fetchAbout(link_) {
-  console.log(link_);
   fetch(link_) //only one entry in json file (WP REST)
     .then(res => res.json())
-    .then(showAbout);
+    .then(showAbout)
+    .then(boldNav);
 }
 
 function showAbout(json) {
-  console.log(json); //shows json file in console, makes development much easier
+  console.log(json);
   let acf = json.acf;
-  console.dir(acf);
 
   let imageDesktop = document.getElementById('aboutImageDesktop'); //selecting DOM elements
   let imageMobile = document.getElementById('aboutImageMobile');
@@ -50,13 +48,10 @@ function showAbout(json) {
   imageDesktop.setAttribute('src', image);
   // imageMobile.setAttribute('src', image);
 
-  console.log('json bfore ' + jsonText);
-  console.log('image ' + image);
   jsonText = jsonText.replace(
     '<p>',
     '<p><img id="aboutImageMobile" class="noDesktop" src="' + image + '">'
   ); ///adding image to text, in order for it to float in it
-  console.log(jsonText);
 
   aboutText.innerHTML = jsonText;
 
@@ -68,7 +63,6 @@ function pushImages(arrTemp) {
     ///looping through all keys in this product(acf= advanced custom fields)
     if (key && key != 'image1') {
       let photo = arrTemp[key].sizes.medium_large;
-      console.dir(photo);
       if (photo) {
         let newDiv = document.createElement('div');
         newDiv.classList.add('gallery-item');
@@ -84,4 +78,13 @@ function pushImages(arrTemp) {
   }
 }
 
+function boldNav() {
+  if (dynamicContent == 'siqiuli') {
+    document.querySelector('#aboutSi a').style.fontWeight = '500';
+  } else if (dynamicContent == 'museum') {
+    document.querySelector('#aboutMu a').style.fontWeight = '500';
+  } else if (dynamicContent == 'ceramic') {
+    document.querySelector('#aboutCe a').style.fontWeight = '500';
+  }
+}
 fetchAbout(link);
