@@ -21,8 +21,8 @@ function getAllPaintings() {
   fetch('http://dashboard.siqiuli.com/?rest_route=/wp/v2/art/' + dynamicContent)
     .then(res => res.json())
     .then(showPaintings)
-    .then(placeSize)
-    .then(muteVideos);
+    .then(muteVideos)
+    .then(placeSize);
 }
 
 function showPaintings(data) {
@@ -40,13 +40,18 @@ function showPaintings(data) {
     data.title.rendered + '<br><br>' + data.acf.art_piece.chinese_title;
 
   let title = document.querySelector('.title');
+  let sizeP = document.getElementById('size');
+
   let size = document.getElementById('sizeSpan');
   // let desc = document.getElementById('');
 
   title.innerHTML = titleJson;
 
-  if (sizeJson != '') size.innerHTML = sizeJson;
-  else size.style.visibility = 'hidden';
+  if (sizeJson) {
+    size.innerHTML = sizeJson;
+  } else {
+    sizeP.style.display = 'none';
+  }
 
   function putImagesInArray(imgs) {
     for (key in imgs) {
@@ -85,24 +90,6 @@ function showPaintings(data) {
 getAllPaintings();
 
 function fillColumns() {
-  for (i = 1; i < paintings.length; i = i + 2) {
-    var img = document.createElement('img');
-    img.src = paintings[i];
-
-    document.querySelector('#rightImg').appendChild(img);
-  }
-
-  for (i = 0; i < paintings.length; i = i + 2) {
-    var img = document.createElement('img');
-    img.src = paintings[i];
-    if (i == 0) {
-      img.id = 'main-image';
-      document.querySelector('#titleImageWrapper').appendChild(img);
-    } else {
-      document.querySelector('#leftImg').appendChild(img);
-    }
-  }
-
   for (i = 0; i < videosArray.length; i = i + 2) {
     let vidEl = document.createElement('video');
     let srcEl = document.createElement('source');
@@ -131,6 +118,24 @@ function fillColumns() {
       document.querySelector('#rightImg').appendChild(vidEl);
     }
   }
+
+  for (i = 1; i < paintings.length; i = i + 2) {
+    var img = document.createElement('img');
+    img.src = paintings[i];
+
+    document.querySelector('#rightImg').appendChild(img);
+  }
+
+  for (i = 0; i < paintings.length; i = i + 2) {
+    var img = document.createElement('img');
+    img.src = paintings[i];
+    if (i == 0) {
+      img.id = 'main-image';
+      document.querySelector('#titleImageWrapper').appendChild(img);
+    } else {
+      document.querySelector('#leftImg').appendChild(img);
+    }
+  }
 }
 
 function placeSize() {
@@ -141,5 +146,9 @@ function placeSize() {
 }
 
 function muteVideos() {
-  $('video').prop('volume', 0.5);
+  $('video').prop('volume', 0.0);
+  if (!isMobile) {
+    console.log('not mobile!');
+    return true;
+  }
 }
