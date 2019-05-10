@@ -1,8 +1,8 @@
-let weChat = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/contact/734';
+let weChat = 'https://dashboard.siqiuli.com/?rest_route=/wp/v2/contact/734';
 let weChatLi = document.getElementById('wechatLi');
-let address = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/contact/733';
+let address = 'https://dashboard.siqiuli.com/?rest_route=/wp/v2/contact/733';
 let addressLi = document.getElementById('addressesLi');
-let numbers = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/contact/735';
+let numbers = 'https://dashboard.siqiuli.com/?rest_route=/wp/v2/contact/735';
 let numbersLi = document.getElementById('numbersLi');
 
 let tempEl;

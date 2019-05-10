@@ -5,6 +5,13 @@ body {
   /*   overflow-y: hidden;
     overflow-x: hidden; */
 }
+*:before,
+*:after {
+  transition: 0.5s;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 0px;
+}
 
 #listMenu {
   list-style-type: none;
@@ -26,7 +33,7 @@ span {
   cursor: pointer;
   transition: 1s;
   margin-bottom: 10vh;
-  width: 20vw;
+  width: 25vw;
 }
 
 span:hover {

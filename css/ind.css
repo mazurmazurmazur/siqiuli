@@ -2,8 +2,17 @@
   background-color: #b3aeaa85;
 }
 
+body {
+  background-image: url('../images/bgNotVideo.jpeg');
+  background-size: 100vw auto;
+}
+
 @media screen and (max-width: 760px) {
   #header {
     background-color: #b3aeaadb;
+  }
+
+  body {
+    background-size: auto 100vh;
   }
 }

@@ -1,0 +1,6 @@
+Sitemap: http://siqiuli.com/sitemap.xml/
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /images/
+Disallow: /videos/
+

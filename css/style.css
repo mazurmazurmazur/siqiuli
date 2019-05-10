@@ -30,7 +30,7 @@ h2 {
 #logo img {
   width: 100%;
   margin-top: 3vh;
-  transition: 1.8s; /* Transition effect when sliding down (and up) */
+  transition: 1s; /* Transition effect when sliding down (and up) */
 }
 
 #logo {
@@ -53,7 +53,7 @@ h2 {
   left: 0;
   background-color: white;
   z-index: 20;
-  transition: top 1.8s; /* Transition effect when sliding down (and up) */
+  transition: top 1s; /* Transition effect when sliding down (and up) */
   overflow-y: visible;
 }
 
@@ -103,6 +103,46 @@ h2 {
   background-color: #b3aeaa85;
 }
 
+/* OVERLAY LOADING */
+
+#logoLoadingContainer {
+  margin: auto;
+
+  width: 16vw;
+}
+#logoLoadingContainer img {
+  margin-top: 3vh;
+  width: 100%;
+}
+
+#overlayLoading {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgb(255, 255, 255);
+  transition: 1s 0.4s;
+}
+#progress {
+  height: 1px;
+  background: rgb(0, 0, 0);
+  position: absolute;
+  width: 0;
+  top: 50%;
+}
+#progstat {
+  font-size: 0.7em;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 50%;
+  margin-top: -40px;
+  width: 100%;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+/* END  OVERLAY LOADING */
 @media screen and (min-width: 761px) {
   .noDesktop {
     display: none;
@@ -151,7 +191,7 @@ h2 {
 
 /* MOBILE */
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 765px) {
   .noMobile {
     display: none;
   }
@@ -162,6 +202,14 @@ h2 {
   }
 
   #logo img {
+    margin-top: 5vh;
+  }
+
+  #logoLoadingContainer {
+    width: 50vw;
+    margin-bottom: 1vh;
+  }
+  #logoLoadingContainer img {
     margin-top: 5vh;
   }
 
@@ -351,19 +399,34 @@ h2 {
   #englishFlag {
     cursor: pointer;
   }
+  .nav__list {
+    padding: 0 !important;
+  }
 }
 
 /* END OF MOBILE */
 
 /*TABLET*/
 
-@media (min-width: 768px) and (max-width: 1240px) {
+@media (min-width: 666px) and (max-width: 1240px) {
   .nav_ {
     font-size: 1.5vw;
   }
   #langLi {
     right: -3vw;
   }
+
+  #logo {
+    width: 30vw;
+    margin-bottom: 1vh;
+  }
 }
 
 /*END TABLET*/
+
+.keyword {
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  position: absolute;
+}

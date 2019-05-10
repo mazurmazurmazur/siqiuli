@@ -1,82 +1,78 @@
-
-
-
 :root {
-	/* Base font size */
-    font-size: 10px;
-
+  /* Base font size */
+  font-size: 10px;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-	min-height: 100vh;
-	background-color: #ffffff;
-	overflow:hidden;
+  min-height: 100vh;
+  background-color: #ffffff;
+  overflow: hidden;
 }
 
-a:hover{
-	text-decoration: none;
-
+a:hover {
+  text-decoration: none;
 }
 
 .container {
-	max-width: 100rem;
-	margin: 0 auto;
-	padding: 0 2rem 2rem;
-	margin-top: 10vh;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 2rem 2rem;
+  margin-top: 10vh;
 }
 
 .heading {
-	font-family: "Montserrat", Arial, sans-serif;
-	font-size: 4rem;
-	font-weight: 200;
-	line-height: 1.5;
-	text-align: center;
-	padding: 3.5rem 0;
-	color: #1a1a1a;
+  margin-top: 20vh;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: 200;
+  line-height: 1.5;
+  text-align: center;
+  padding: 3.5rem 0;
+  color: #1a1a1a;
 }
 
 .heading span {
-	display: block;
+  display: block;
 }
 
 .gallery {
-	display: flex;
-	flex-wrap: wrap;
-	/* Compensate for excess margin on outer gallery flex items */
-	margin: -1rem -1rem;
+  display: flex;
+  flex-wrap: wrap;
+  /* Compensate for excess margin on outer gallery flex items */
+  margin: -1rem -1rem;
 }
 
 .gallery-item {
-	/* Minimum width of 24rem and grow to fit available space */
-	flex: 1 0 24rem;
-	/* Margin value should be half of grid-gap value as margins on flex items don't collapse */
-	margin: 1rem;
-	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
-	overflow: hidden;
+  /* Minimum width of 24rem and grow to fit available space */
+  flex: 1 0 24rem;
+  /* Margin value should be half of grid-gap value as margins on flex items don't collapse */
+  margin: 1rem;
+  box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
+  overflow: hidden;
 }
 
 .gallery-image {
-    margin: auto;
-	display: block;
-    width: 100%;
-    height: 30vh;
-	object-fit: cover;
-	transition: transform 400ms ease-out;
+  margin: auto;
+  display: block;
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  transition: transform 400ms ease-out;
 }
 
 .gallery-image:hover {
-	transform: scale(1.15);
+  transform: scale(1.15);
 }
 
-.textBelowSection{
-    text-align: center;
-    font-size: 2.2em;
+.textBelowSection {
+  text-align: center;
+  font-size: 2.2em;
 }
 
 /*
@@ -88,20 +84,20 @@ Remove or comment-out the code block below to see how the browser will fall-back
 */
 
 @supports (display: grid) {
-	.gallery {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
-		grid-gap: 2rem;
-	}
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    grid-gap: 2rem;
+  }
 
-	.gallery,
-	.gallery-item {
-		margin: 0;
-	}
+  .gallery,
+  .gallery-item {
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 760px) {
-body{
-	overflow-y: auto;
-}
+  body {
+    overflow-y: auto;
+  }
 }

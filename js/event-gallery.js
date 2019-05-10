@@ -18,7 +18,7 @@ var paintings = [];
 
 function getAllPaintings() {
   fetch(
-    'http://dashboard.siqiuli.com/?rest_route=/wp/v2/event/' + dynamicContent
+    'https://dashboard.siqiuli.com/?rest_route=/wp/v2/event/' + dynamicContent
   )
     .then(res => res.json())
     .then(showPaintings);

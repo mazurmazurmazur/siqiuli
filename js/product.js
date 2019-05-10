@@ -18,7 +18,9 @@ let paintings = [];
 let videosArray = [];
 
 function getAllPaintings() {
-  fetch('http://dashboard.siqiuli.com/?rest_route=/wp/v2/art/' + dynamicContent)
+  fetch(
+    'https://dashboard.siqiuli.com/?rest_route=/wp/v2/art/' + dynamicContent
+  )
     .then(res => res.json())
     .then(showPaintings)
     .then(muteVideos)

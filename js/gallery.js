@@ -15,7 +15,7 @@ var dynamicContent = getParameterByName('cat');
 //the id set in this URL comes from fetched json file in blog.js
 
 function getAllArtItems() {
-  fetch('http://dashboard.siqiuli.com/?rest_route=/wp/v2/art&per_page=100')
+  fetch('https://dashboard.siqiuli.com/?rest_route=/wp/v2/art&per_page=100')
     .then(res => res.json())
     .then(showItems)
     .then(applyAnimations);
@@ -41,6 +41,8 @@ function showItems(data) {
     let itemId = theArtItem.id;
 
     image.setAttribute('src', titleEnglish);
+    image.setAttribute('alt', 'Si Qiuli Ceramic ' + titleEnglish);
+
     titleTag.innerHTML = titleChinese;
     anchorGal.setAttribute('href', 'product.html?id=' + itemId);
 

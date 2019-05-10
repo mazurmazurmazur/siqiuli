@@ -2,7 +2,7 @@ let imagesArr = [];
 let detsArr = [];
 
 function getAllArtItems() {
-  fetch('http://dashboard.siqiuli.com/?rest_route=/wp/v2/event&per_page=100')
+  fetch('https://dashboard.siqiuli.com/?rest_route=/wp/v2/event&per_page=100')
     .then(res => res.json())
     .then(showItems)
     .then(applyExhAnim)
@@ -48,7 +48,6 @@ function showItems(data) {
 getAllArtItems();
 
 function applyExhAnim() {
-  let wrapper = $('#listMenu');
   let menuItems = $('.aa');
 
   $('.aa').click(function() {
@@ -59,11 +58,11 @@ function applyExhAnim() {
 
     listMenu.css('top', menuFromTop + (halfPageHeight - distanceFromTop));
 
-    menuItems.css('font-size', '10px');
+    menuItems.css({ 'font-size': '10px', 'font-weight': '100' });
 
     if (window.matchMedia('(max-width: 767px)').matches)
-      $(this).css('font-size', '20px');
-    else $(this).css('font-size', '30px');
+      $(this).css('font-size', '15px');
+    else $(this).css({ 'font-size': '1.2vw', 'font-weight': '300' });
 
     let mainDiv = $('.mainPainting');
 

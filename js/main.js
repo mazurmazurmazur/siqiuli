@@ -82,3 +82,48 @@ flag.click(function() {
 chineseFlag.addEventListener('click', function() {
   window.location.replace('http://siqiulicontemporaryceramicart.com');
 });
+
+////LOADING BAR BELOW
+
+(function() {
+  function id(v) {
+    return document.getElementById(v);
+  }
+  function loadbar() {
+    var ovrl = id('overlayLoading'),
+      prog = id('progress'),
+      stat = id('progstat'),
+      img = document.images,
+      c = 0;
+    tot = img.length;
+
+    function imgLoaded() {
+      c += 1;
+      var perc = (((100 / tot) * c) << 0) + '%';
+      prog.style.width = perc;
+      stat.innerHTML = 'Loading ' + perc;
+      if (c === tot) return doneLoading();
+    }
+    function doneLoading() {
+      ovrl.style.opacity = 0;
+      setTimeout(function() {
+        ovrl.style.display = 'none';
+      }, 1200);
+    }
+    for (var i = 0; i < tot; i++) {
+      var tImg = new Image();
+      tImg.onload = imgLoaded;
+      tImg.onerror = imgLoaded;
+      tImg.src = img[i].src;
+    }
+  }
+
+  var myVideo = document.getElementById('myVideo');
+  if (myVideo) {
+    myVideo.addEventListener('canplaythrough', loadbar, false);
+  } else {
+    document.addEventListener('DOMContentLoaded', loadbar, false);
+  }
+})();
+
+////END LOADING BAR

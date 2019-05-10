@@ -15,12 +15,16 @@ var dynamicContent = getParameterByName('id');
 //the id set in this URL comes from fetched json file in blog.js
 
 let link;
+let tempAlt;
 if (dynamicContent == 'siqiuli') {
-  link = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/204';
+  link = 'https://dashboard.siqiuli.com/?rest_route=/wp/v2/about/204';
+  tempAlt = 'Si Qiuli';
 } else if (dynamicContent == 'museum') {
-  link = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/261';
+  tempAlt = 'Museum';
+  link = 'https://dashboard.siqiuli.com/?rest_route=/wp/v2/about/261';
 } else if (dynamicContent == 'ceramic') {
-  link = 'http://dashboard.siqiuli.com/?rest_route=/wp/v2/about/260';
+  tempAlt = 'Ceramic Art';
+  link = 'https://dashboard.siqiuli.com/?rest_route=/wp/v2/about/260';
 }
 
 let images = [];
@@ -46,6 +50,8 @@ function showAbout(json) {
   images = acf.about_images;
 
   imageDesktop.setAttribute('src', image);
+  imageDesktop.setAttribute('alt', tempAlt);
+
   // imageMobile.setAttribute('src', image);
 
   jsonText = jsonText.replace(
