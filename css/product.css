@@ -156,6 +156,19 @@ body {
 #sizeSpan {
   font-weight: 500;
 }
+
+#description {
+  margin: auto;
+  width: 50vw;
+  border-top: 1px rgb(204, 204, 204) solid;
+  margin-top: 5vh;
+  padding-top: 5vh;
+  text-align: center;
+  font-size: 1.5vw;
+  line-height: 5vh;
+  font-weight: 100;
+}
+
 video {
   object-fit: fill;
 }
@@ -195,7 +208,7 @@ video {
 
   .title,
   #size {
-    font-size: 2em;
+    font-size: 1.5em;
     text-align: center;
     left: 0;
     right: 0;
@@ -204,8 +217,14 @@ video {
     margin-top: 3vh;
   }
 
-  #size {
-    font-size: 1.5em;
+  .parent {
+    margin-top: 0;
+  }
+
+  #description {
+    line-height: 3.5vh;
+    font-size: 2.5vw;
+    font-weight: 200;
   }
 } /*-----------END OF MOBILE MEDIA QUERY------------*/
 
@@ -252,5 +271,36 @@ video {
     height: 50vh;
     width: auto !important;
     margin: 30vh auto 10vh auto;
+    max-width: 100vw;
   }
-} /* ---------------- END OF MEDIA QUERIES --------------------*/
+}
+
+/*TABLET*/
+
+@media (min-width: 666px) and (max-width: 1024px) {
+  #size {
+    font-size: 1.5em;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    position: initial;
+  }
+  #main-image {
+    width: 100vw;
+    height: auto;
+  }
+  .parent {
+    margin-top: 0;
+  }
+
+  #description {
+    line-height: 4vh;
+    font-size: 2vw;
+  }
+}
+
+/* END TABLET */
+/* ---------------- END OF MEDIA QUERIES --------------------*/

@@ -2,11 +2,71 @@
   background-color: #b3aeaa85;
 }
 
-body {
-  background-image: url('../images/bgNotVideo.jpeg');
-  background-size: 100vw auto;
+#bgNotVideoContainer {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
+#bgNotVideo {
+  width: 100%;
+  height: auto;
+}
+
+.menu-icon {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#mainTextHeader {
+  text-align: center;
+  margin-top: 5vw;
+  margin-bottom: 3vw;
+  font-size: 30px;
+}
+
+.nav_ {
+  padding-top: 0;
+}
+
+#mainPageDesc p {
+  text-align: justify;
+  width: 60vw;
+  margin: auto;
+  line-height: 4vh;
+  font-size: 2vh;
+  margin-bottom: 2em;
+}
+
+#mainPageDesc p:first-of-type {
+  border-top: 1px solid rgba(128, 128, 128, 0.603);
+  padding-top: 2vh;
+}
+
+#mainPageDesc {
+  margin-bottom: 10vh;
+}
+
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.content {
+  position: absolute;
+  bottom: 20vh;
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  font-size: 20px;
+  width: 60vw;
+  font-weight: 500;
+  background-color: #b3aeaa85;
+}
+
+/* MOBILE */
 @media screen and (max-width: 760px) {
   #header {
     background-color: #b3aeaadb;
@@ -15,4 +75,17 @@ body {
   body {
     background-size: auto 100vh;
   }
+  #bgNotVideo {
+    width: auto;
+    height: 100%;
+  }
 }
+/* END MOBILE */
+/* TABLET */
+@media (min-width: 666px) and (max-width: 1024px) {
+  #bgNotVideo {
+    width: auto;
+    height: 100%;
+  }
+}
+/* END TABLET */

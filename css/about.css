@@ -107,12 +107,13 @@ h1 {
   #aboutNav {
     width: 100vw;
     position: fixed;
-    top: 18vh;
+    top: 15vh;
     display: block;
     margin: auto;
     background: white;
     z-index: 3;
     padding-bottom: 1vh;
+    transition: top 1s; /* Transition effect when sliding down (and up) */
   }
 
   #aboutNav ul {
@@ -138,3 +139,17 @@ h1 {
 }
 
 /* END OF ONLY DESKTOP */
+
+/*TABLET*/
+
+@media (min-width: 666px) and (max-width: 1024px) {
+  #imagesAbout {
+    overflow: hidden;
+  }
+
+  #aboutImageDesktop {
+    transform: translateX(-25vw);
+  }
+}
+
+/* END TABLET */

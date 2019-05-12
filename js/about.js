@@ -93,4 +93,26 @@ function boldNav() {
     document.querySelector('#aboutCe a').style.fontWeight = '500';
   }
 }
+
+// hide menu on scroll below
+
+if (isMobile) {
+  var prevScrollpos = window.pageYOffset;
+  window.addEventListener('scroll', onScrollAboutMenuHides);
+  let aboutNav = document.getElementById('aboutNav');
+
+  function onScrollAboutMenuHides() {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      aboutNav.style.top = '15vh';
+    } else {
+      aboutNav.style.top = '-20vh';
+    }
+    prevScrollpos = currentScrollPos;
+  }
+}
+
+onScrollAction();
+//end hide menu on scroll
+
 fetchAbout(link);

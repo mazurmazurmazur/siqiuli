@@ -29,8 +29,10 @@ var app = (function() {
 
       setTimeout(function() {
         nav.style.display = 'none';
+        menu.style.backgroundColor = '#ffffff91';
       }, 800);
     } else {
+      menu.style.backgroundColor = 'transparent';
       nav.style.display = 'block';
       setTimeout(function() {
         element.classList.add(stringClass);
@@ -45,27 +47,30 @@ var app = (function() {
 
 // hide menu on scroll below
 
-if (!isMobile) {
+function onScrollAction() {
   var prevScrollpos = window.pageYOffset;
   window.addEventListener('scroll', onScrollMenuHides);
   let logoImg = document.querySelector('#logo img');
+  let headerVar = document.getElementById('header');
 
   function onScrollMenuHides() {
     var currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
-      document.getElementById('header').style.top = '0';
+      headerVar.style.top = '0';
       logoImg.style.transform = 'translate(0, 0)';
       logoImg.style.backgroundColor = 'rgba(255, 255, 255, 0.0)';
     } else {
-      logoImg.style.transform = 'translate(-39vw, 25vh)';
-      logoImg.style.backgroundColor = 'rgba(255, 255, 255, 0.44)';
-
-      document.getElementById('header').style.top = '-25vh';
+      headerVar.style.top = '-30vh';
+      if (!isMobile) {
+        logoImg.style.transform = 'translate(-39vw, 30vh)';
+        logoImg.style.backgroundColor = 'rgba(255, 255, 255, 0.44)';
+      }
     }
     prevScrollpos = currentScrollPos;
   }
 }
 
+onScrollAction();
 //end hide menu on scroll
 
 //changing lang below
@@ -127,3 +132,17 @@ chineseFlag.addEventListener('click', function() {
 })();
 
 ////END LOADING BAR
+
+$(window).resize(function() {
+  let logoImg = document.querySelector('#logo img');
+  document.getElementById('header').style.top = '0';
+  logoImg.style.transform = 'translate(0, 0)';
+  logoImg.style.backgroundColor = 'rgba(255, 255, 255, 0.0)';
+  if ($(window).width() < 768) {
+    console.log('mobile');
+    elClone = logoImg.cloneNode(true);
+    logoImg.parentNode.replaceChild(elClone, logoImg);
+  } else {
+    onScrollAction();
+  }
+});

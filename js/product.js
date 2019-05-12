@@ -37,17 +37,18 @@ function showPaintings(data) {
   let images2 = data.acf.art_piece.images2;
   let videos = data.acf.art_piece.videos;
   let sizeJson = data.acf.art_piece.size;
-  // let descJson = data.acf.art_piece.description;
+  let descJson = data.acf.art_piece.english;
   let titleJson =
     data.title.rendered + '<br><br>' + data.acf.art_piece.chinese_title;
 
   let title = document.querySelector('.title');
   let sizeP = document.getElementById('size');
+  let descHtml = document.getElementById('description');
 
   let size = document.getElementById('sizeSpan');
-  // let desc = document.getElementById('');
 
   title.innerHTML = titleJson;
+  descHtml.innerHTML = descJson;
 
   if (sizeJson) {
     size.innerHTML = sizeJson;
@@ -141,10 +142,16 @@ function fillColumns() {
 }
 
 function placeSize() {
-  if (!isMobile) {
-    let tempLeft = $('#main-image').offset().left;
-    $('#size').css('left', tempLeft / 2);
-  }
+  setTimeout(function() {
+    if ($(window).width() > 1024) {
+      let tempLeft = $('#main-image').offset().left;
+      console.log('tempLeft ' + tempLeft);
+      $('#size').css('left', tempLeft / 2);
+      if (tempLeft == $(window).width() / 2) {
+        placeSize(); ///// RECURSIVE FUNCTION !!!!!!
+      }
+    }
+  }, 500);
 }
 
 function muteVideos() {

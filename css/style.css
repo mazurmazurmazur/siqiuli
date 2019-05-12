@@ -6,6 +6,7 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
 }
+
 body {
   width: 100vw;
   margin: 0;
@@ -82,26 +83,6 @@ h2 {
 /* .active {
   border: 2px grey solid;
 } */
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-.content {
-  position: fixed;
-  bottom: 20vh;
-  color: #f1f1f1;
-  width: 100%;
-  padding: 20px;
-  font-size: 20px;
-  width: 60vw;
-  font-weight: 500;
-  background-color: #b3aeaa85;
-}
 
 /* OVERLAY LOADING */
 
@@ -186,6 +167,8 @@ h2 {
   .nav__list {
     padding: 0 !important;
     margin-left: -2vw;
+
+    margin-block-end: 1em;
   }
 }
 
@@ -214,13 +197,13 @@ h2 {
   }
 
   .menu-icon {
-    height: 40px;
     width: 40px;
     position: fixed;
     z-index: 20;
     right: 10vw;
     top: 7vh;
     text-decoration: none;
+    background-color: #ffffff91;
   }
   .menu-icon__line {
     height: 2px;
@@ -283,6 +266,10 @@ h2 {
     color: white;
     font-weight: 200;
     cursor: pointer;
+    height: 100%;
+    overflow-y: auto;
+    margin-top: 10vh;
+    -webkit-overflow-scrolling: touch;
   }
 
   ul .nav__list {
@@ -417,8 +404,20 @@ h2 {
   }
 
   #logo {
-    width: 30vw;
+    width: 20vw;
     margin-bottom: 1vh;
+  }
+
+  .nav__list-item {
+    font-size: 2vw;
+  }
+
+  .flag {
+    font-size: 1.5vw;
+  }
+
+  .languages {
+    right: 5vw;
   }
 }
 

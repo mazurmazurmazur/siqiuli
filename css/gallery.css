@@ -102,3 +102,11 @@ a:hover {
 }
 
 /* END DESKTOP */
+/*TABLET*/
+
+@media (min-width: 666px) and (max-width: 1024px) {
+  .content-gal img {
+    width: 80vw;
+    height: auto;
+  }
+}
